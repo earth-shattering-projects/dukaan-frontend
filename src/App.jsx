@@ -1,48 +1,38 @@
 import AppBar from "./components/AppBar";
 import ButtonPanel from "./components/ButtonPanel";
+import Overview from "./components/Overview";
 import RevenueCard from "./components/RevenueCard";
 import SideBar from "./components/SideBar";
-
-function App() {
+import Transactions from "./components/Transactions";
+const App = () => {
   return (
-    <div className="bg-gray-100 grid grid-cols-5">
-      <div className="col-span-1">
+    <div className="grid grid-cols-12">
+      <div className="col-span-3 h-full bg-sideBarBlue">
         <SideBar />
       </div>
-      <div className="col-span-4">
+      <div className="bg-backGroundGray col-span-9">
         <AppBar />
-        <div className="p-5 font-medium">Overview</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-5 items-start">
-          <RevenueCard
-            colored={true}
-            extended={true}
-            displayOrders={true}
-            headerText={"Next Payout"}
-            orderCount={23}
-            amount={"2,312.23"}
-            nextPaymentDate={"Today, 4:00PM"}
-          />
-          <RevenueCard
-            colored={false}
-            extended={false}
-            displayOrders={true}
-            headerText={"Amount Pending"}
-            orderCount={13}
-            amount={"92,312.20"}
-          />
-          <RevenueCard
-            colored={false}
-            extended={false}
-            displayOrders={false}
-            headerText={"Amount Processed"}
-            amount={"23,92,312.19"}
-          />
+        <div className="m-5">
+          <Overview />
+          <div className="grid grid-cols-3 items-start">
+            <RevenueCard
+              extended={true}
+              orderCount={23}
+              headerText={"Next Payout"}
+            />
+            <RevenueCard
+              extended={false}
+              orderCount={13}
+              headerText={"Amount Pending"}
+            />
+            <RevenueCard extended={false} headerText={"Amount Processed"} />
+          </div>
+          <Transactions />
+          <ButtonPanel />
         </div>
-        <div className="p-5 font-medium">Transactions | This Month</div>
-        <ButtonPanel />
       </div>
     </div>
   );
-}
+};
 
 export default App;

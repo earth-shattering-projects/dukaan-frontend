@@ -1,10 +1,11 @@
 import React from "react";
+import Button from "./Button";
 
 const ButtonPanel = () => {
   return (
-    <div className="flex p-5 pt-3 gap-5">
-      <div className="rounded-2xl bg-gray-300 p-2">Payouts (221)</div>
-      <div className="rounded-2xl bg-sky-600 p-2">Refunds (6)</div>
+    <div className="p-4 pt-1 flex text-sm">
+      <Button displayText={"Payouts (22)"} />
+      <Button type={"blue"} displayText={"Refunds (6)"} />
     </div>
   );
 };

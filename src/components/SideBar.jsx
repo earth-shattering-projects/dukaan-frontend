@@ -1,24 +1,26 @@
 import React from "react";
+import SideBarButton from "./SideBarButton";
+import SideBarSpecialButton from "./SideBarSpecialButton";
 
 const SideBar = () => {
   return (
-    <div className="bg-blue-700 h-screen">
-      <div className="flex justify-between">
-        <div className="flex p-2 gap-2">
-          <div>
-            <img
-              className="h-12 w-12"
-              src="https://randomwordgenerator.com/img/picture-generator/57e7d1474d5bac14f1dc8460962e33791c3ad6e04e50744172297cd5914cc7_640.jpg"
-            />
-          </div>
-          <div>
-            <div className="text-sm">
-              <div className="pb-2 pt-1">Nishyan</div>
-              <div>Visit store</div>
-            </div>
-          </div>
-        </div>
-        <div className="p-2 pt-4">
+    <div className="flex flex-col text-white justify-between">
+      <div>
+        <SideBarSpecialButton />
+        <SideBarButton name={"Home"} />
+        <SideBarButton name={"Orders"} />
+        <SideBarButton name={"Products"} />
+        <SideBarButton name={"Delivery"} />
+        <SideBarButton name={"Marketing"} />
+        <SideBarButton name={"Analytics"} />
+        <SideBarButton name={"Payouts"} />
+        <SideBarButton name={"Discount"} />
+        <SideBarButton name={"Audience"} />
+        <SideBarButton name={"Appearance"} />
+        <SideBarButton name={"Plugins"} />
+      </div>
+      <div className="grid grid-cols-12 bg-sideBarHighlightGray m-2 p-3 text-sm font-thin items-center">
+        <div className="col-span-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -30,22 +32,15 @@ const SideBar = () => {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
             />
           </svg>
         </div>
+        <div className="col-span-9">
+          <div>Available credits</div>
+          <div>221.10</div>
+        </div>
       </div>
-      <div>Home</div>
-      <div>Orders</div>
-      <div>Products</div>
-      <div>Delivery</div>
-      <div>Marketing</div>
-      <div>Analytics</div>
-      <div>Payouts</div>
-      <div>Discounts</div>
-      <div>Audience</div>
-      <div>Appearance</div>
-      <div>Plugins</div>
     </div>
   );
 };
